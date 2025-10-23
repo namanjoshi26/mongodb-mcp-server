@@ -1,5 +1,7 @@
 FROM node:22-alpine
 RUN npm install -g mongodb-mcp-server
 ENV MDB_MCP_CONNECTION_STRING=mongodb+srv://joshinaman1741_db_user:lRJhJ8YXFSrkpSp1@cluster0.vo8njzv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ENV HTTP_HOST=0.0.0.0
+ENV HTTP_PORT=3000
 EXPOSE 3000
-CMD ["mongodb-mcp-server", "--transport", "http", "--httpHost", "0.0.0.0", "--httpPort", "3000"]
+CMD ["npx", "-y", "mongodb-mcp-server"]
